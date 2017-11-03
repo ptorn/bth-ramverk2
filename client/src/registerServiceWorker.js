@@ -22,11 +22,12 @@ export default function register() {
     if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
         const publicUrl = new URL(process.env.PUBLIC_URL, window.location);
+
         if (publicUrl.origin !== window.location.origin) {
-          // Our service worker won't work if PUBLIC_URL is on a different origin
-          // from what our page is served on. This might happen if a CDN is used to
-          // serve assets; see https://github.com/facebookincubator/create-react-app/issues/2374
-          return;
+            // Our service worker won't work if PUBLIC_URL is on a different origin
+            // from what our page is served on. This might happen if a CDN is used to
+            // serve assets; see https://github.com/facebookincubator/create-react-app/issues/2374
+            return;
         }
 
         window.addEventListener('load', () => {
@@ -49,6 +50,7 @@ function registerValidSW(swUrl) {
         .then(registration => {
             registration.onupdatefound = () => {
                 const installingWorker = registration.installing;
+
                 installingWorker.onstatechange = () => {
                     if (installingWorker.state === 'installed') {
                         if (navigator.serviceWorker.controller) {
@@ -68,15 +70,15 @@ function registerValidSW(swUrl) {
             };
         })
         .catch(error => {
-          console.error('Error during service worker registration:', error);
+            console.error('Error during service worker registration:', error);
         });
 }
 
 function checkValidServiceWorker(swUrl) {
-  // Check if the service worker can be found. If it can't reload the page.
+    // Check if the service worker can be found. If it can't reload the page.
     fetch(swUrl)
         .then(response => {
-          // Ensure service worker exists, and that we really are getting a JS file.
+            // Ensure service worker exists, and that we really are getting a JS file.
             if (
                 response.status === 404 ||
                 response.headers.get('content-type').indexOf('javascript') === -1

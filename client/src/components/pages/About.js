@@ -6,10 +6,9 @@ const About = () => {
         <Layout>
             <div>
                 <h1>Om Ramverk 2</h1>
-
             </div>
         </Layout>
     );
-}
+};
 
 export default About;

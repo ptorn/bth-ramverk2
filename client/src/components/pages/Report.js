@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-import Layout from "../Layout";
-import { Link } from 'react-router-dom'
+import Layout from '../Layout';
+import { Link } from 'react-router-dom';
 
 class Report extends Component {
-    state = {report: ""}
+    constructor() {
+        super();
+        this.state = {report: ""};
+    }
 
     componentDidMount() {
         fetch('/reports/kmom01')
             .then(res => res.json())
             .then(report => this.setState({ report }));
-    };
+    }
 
     getReport(report) {
         console.log(report);
