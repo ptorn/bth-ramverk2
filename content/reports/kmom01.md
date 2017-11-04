@@ -18,6 +18,8 @@ En annan fördel med React är att man behöver inte ladda om hela DOM-trädet o
 
 Andra fördelar är att jag nu har ett REST api där jag nu kan hämta information ifrån och använda i andra sammanhang från andra klienter.
 
+Jag har lagt upp en demo utav sidan på en droplet på DigitalOcean.
+
 ### Berätta om din katalogstruktur och hur du organiserade din kod, hur tänkte du?
 Jag delade upp det i en server och en klient. På servern så har jag en src mapp där jag har mina controller och modeller. Det följer lite strukturen som vi jobbade med i ramverk1. Jag har även en router mapp där jag delat upp mina routes i egna filer. Jag ville få en tydlig struktur och på så sätt dela upp min kod och förhoppningsvis göra den mer testbar.
 

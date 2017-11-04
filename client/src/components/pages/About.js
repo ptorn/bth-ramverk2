@@ -20,7 +20,8 @@ const About = () => {
                     </a>
                 </p>
                 <div className="col-md-6">
-                    <img src="/images/React_logo_wordmark.png" className="img-responsive" alt="React"></img>
+                    <img src="/images/React_logo.png" className="img-responsive" alt="React">
+                    </img>
                 </div>
             </div>
         </Layout>
