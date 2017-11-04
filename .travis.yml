@@ -6,6 +6,9 @@ node_js:
 
 before_script:
     - npm install
+    - cd client
+    - npm install
+    - cd ..
 
 script:
     - npm test
