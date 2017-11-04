@@ -14,12 +14,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "install-less": "lessc src/less/style.less public/style.min.css",
+    "install-less": "lessc --clean-css src/less/style.less public/style.min.css",
     "validate-less": "lesshint src/less/style.less"
   },
   "proxy": "http://localhost:3001",
   "devDependencies": {
     "less": "^2.7.3",
+    "less-plugin-clean-css": "^1.5.1",
     "lesshint": "^4.3.0"
   }
 }
