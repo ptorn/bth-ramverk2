@@ -15,7 +15,7 @@ class Report extends Component {
         };
     }
 
-    componentDidMount(props) {
+    componentDidMount() {
         this.getReport(this.props.match.params.report);
     }
 

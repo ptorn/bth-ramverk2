@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Footer = () => {
-    return(
+    return (
         <div>
             <div className="footer-author">
                 Peder Tornberg - Ramverk2
@@ -14,6 +14,6 @@ const Footer = () => {
             </div>
         </div>
     );
-}
+};
 
 export default Footer;

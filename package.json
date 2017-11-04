@@ -6,7 +6,10 @@
     "start": "node ./bin/www",
     "start-dev": "LOCAL_DEV_PORT=3001 nodemon ./bin/www",
     "eslint": "eslint .; exit 0",
-    "stylelint": "stylelint **/*.css; exit 0"
+    "stylelint": "stylelint **/*.css; exit 0",
+    "test": "npm run eslint && npm run stylelint",
+    "install-client": "cd client && npm install",
+    "build-client": "cd client && npm build"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
