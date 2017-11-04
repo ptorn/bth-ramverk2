@@ -25,7 +25,6 @@ class Reports extends Component {
     }
 
     getReport(report) {
-        console.log(report);
         fetch('/reports/' + report)
             .then(res => res.json())
             .then(report => this.setState({ report }));

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const NavReports = () => {
     return (
-        <div className="navbar-reports">
+        <div className="navbar-reports mt-20">
             <Link to="/report/kmom01">Kmom01 | </Link>
             <Link to="/report/kmom02">Kmom02 | </Link>
             <Link to="/report/kmom03">Kmom03 | </Link>

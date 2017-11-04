@@ -9,8 +9,8 @@ class Report extends Component {
         super(props);
         this.state = {
             report: {
-                content: "",
-                title: ""
+                content: "Laddar!",
+                title: "Vänta ett ögonblick medans vi hämtar rapporten."
             }
         };
     }

@@ -9,7 +9,7 @@
     "stylelint": "stylelint **/*.css; exit 0",
     "test": "npm run eslint && npm run stylelint",
     "install-client": "cd client && npm install",
-    "build-client": "cd client && npm build"
+    "build-client": "cd client && npm run install-less && npm run build"
   },
   "dependencies": {
     "body-parser": "~1.18.2",

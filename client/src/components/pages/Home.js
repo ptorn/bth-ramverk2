@@ -5,7 +5,7 @@ class Home extends Component {
     render() {
         return (
             <Layout>
-                <div>
+                <div className="mb-20">
                     <h1>Peder Tornberg - peto16</h1>
                     <p>
                         Peder Tornberg heter jag och jag är en 35 årig småbarnsförälder.
@@ -27,6 +27,7 @@ class Home extends Component {
                         Kaden och Noah som är 6 och 3 år gamla.
                         Dom är solstrålarna som förgyller livet.
                     </p>
+                    <img src="/images/me.jpg" className="img-responsive image-center"></img>
                 </div>
             </Layout>
         );
