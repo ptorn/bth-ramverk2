@@ -1,7 +1,9 @@
 version: "3"
 services:
-    node9:
-      image: "node:9"
+    ramverk2_node9:
+      build:
+        context: .
+        dockerfile: dockerfiles/Dockerfile_node9
       user: "node"
       working_dir: /home/node/app
       environment:
@@ -12,8 +14,10 @@ services:
       ports:
         - "8009:8009"
       command: "npm start"
-    node8:
-      image: "node:8"
+    ramverk2_node8:
+      build:
+        context: .
+        dockerfile: dockerfiles/Dockerfile_node8
       user: "node"
       working_dir: /home/node/app
       environment:
@@ -24,8 +28,10 @@ services:
       ports:
         - "8008:8008"
       command: "npm start"
-    node6:
-      image: "node:6"
+    ramverk2_node6:
+      build:
+        context: .
+        dockerfile: dockerfiles/Dockerfile_node6
       user: "node"
       working_dir: /home/node/app
       environment:
