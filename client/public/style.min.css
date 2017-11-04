@@ -12,29 +12,29 @@ body {
   margin-top: 20px;
 }
 .ml-0 {
-  margin-left: 0;
+  margin-left: 0px;
 }
 .pl-0 {
-  padding-left: 0;
+  padding-left: 0px;
 }
 .mr-0 {
-  margin-right: 0;
+  margin-right: 0px;
 }
 .pr-0 {
-  padding-right: 0;
+  padding-right: 0px;
 }
 /*
 Position
  */
 .image-center {
-  margin: 0 auto;
+  margin: 0px auto;
 }
 .navbar {
-  margin-bottom: 0;
-  border-radius: 0;
-  border: none;
-  box-shadow: 0px 0px 6px #333;
-  background-image: linear-gradient(to bottom, #303B4D, #070F1A);
+  margin-bottom: 0px;
+  border-radius: 0px;
+  border: 0px;
+  box-shadow: 0px 0px 6px #333333;
+  background-image: linear-gradient(to bottom, #303b4d, #070f1a);
   color: #e7e7e7;
 }
 .navbar .navbar-brand {
@@ -51,17 +51,17 @@ Position
   background-image: linear-gradient(to bottom, #e7e7e7, #c3c3c3);
 }
 .navbar .navbar-collapse {
-  border-top: none;
+  border-top: 0px;
 }
 .navbar ul.dropdown-menu li a.nav-link {
-  color: #555;
+  color: #555555;
 }
 .container-fluid {
   min-height: calc(100vh - 200px);
   margin-bottom: 150px;
-  margin-left: 0;
-  margin-right: 0;
-  padding: 0;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0px;
 }
 .question-post .awnsers {
   margin-left: 40px;
@@ -77,17 +77,17 @@ Position
   justify-content: center;
   align-items: center;
   display: flex;
-  background-color: #333;
-  color: #fff;
+  background-color: #333333;
+  color: #ffffff;
 }
 .footer a {
-  color: #fff;
+  color: #ffffff;
 }
 .footer .block.site-footer {
   text-align: center;
 }
 .footer .block.site-footer ul {
-  padding: 0;
+  padding: 0px;
 }
 .footer .block.site-footer ul li {
   list-style: none;
@@ -99,5 +99,5 @@ Position
   font-weight: bold;
 }
 .footer .block.site-footer ul li:last-child {
-  margin-right: 0;
+  margin-right: 0px;
 }

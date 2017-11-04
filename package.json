@@ -7,7 +7,7 @@
     "start-dev": "LOCAL_DEV_PORT=3001 nodemon ./bin/www",
     "eslint": "eslint .; exit 0",
     "stylelint": "stylelint **/*.css; exit 0",
-    "test": "npm run eslint && npm run stylelint",
+    "test": "npm run eslint && npm run stylelint && cd client && npm run validate-less",
     "install-client": "cd client && npm install",
     "build-client": "cd client && npm run install-less && npm run build"
   },
