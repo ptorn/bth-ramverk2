@@ -37,15 +37,15 @@ const Navbar = () => {
                                         title="Om"
                                         className="nav-link"
                                     >
-                                        <i className="fa fa-question-circle"></i> About
+                                        <i className="fa fa-question-circle"></i> Om
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to="/report"
+                                    <Link to="/reports"
                                         title="Om"
                                         className="nav-link"
                                     >
-                                        <i className="fa fa-file-text"></i> Report
+                                        <i className="fa fa-file-text"></i> Redovisning
                                     </Link>
                                 </li>
                             </ul>

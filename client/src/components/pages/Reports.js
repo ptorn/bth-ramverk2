@@ -1,29 +1,31 @@
 import React, { Component } from 'react';
 import Layout from '../Layout';
 import NavReports from '../NavReports';
-
 import ReactMarkdown from "react-markdown";
 
-class Report extends Component {
-    constructor(props) {
-        super(props);
+class Reports extends Component {
+    constructor() {
+        super();
         this.state = {
             report: {
-                content: "",
+                content: "hej",
                 title: ""
             }
         };
     }
 
-    componentDidMount(props) {
-        this.getReport(this.props.match.params.report);
+    componentDidMount() {
+        this.fetchData();
     }
 
-    componentWillReceiveProps(nextProps) {
-        this.getReport(nextProps.match.params.report);
+    fetchData() {
+        fetch('/reports')
+            .then(res => res.json())
+            .then(report => this.setState({ report }));
     }
 
     getReport(report) {
+        console.log(report);
         fetch('/reports/' + report)
             .then(res => res.json())
             .then(report => this.setState({ report }));
@@ -42,4 +44,4 @@ class Report extends Component {
         );
     }
 }
-export default Report;
+export default Reports;
