@@ -5,9 +5,8 @@ const fs = require("fs");
 const reportController = {
     getReport: (req, res) => {
         let reportName = req.params.report;
-
+        console.log(reportName + "bong");
         fs.readFile("content/reports/" + reportName + ".md", "utf8", (err, data) => {
-            console.log(data);
             res.json({
                 title: reportName,
                 content: data
@@ -16,7 +15,6 @@ const reportController = {
     },
     getReports: (req, res) => {
         fs.readFile("content/pages/report.md", "utf8", (err, data) => {
-            console.log(data);
             res.json({
                 title: "Redovisning",
                 content: data

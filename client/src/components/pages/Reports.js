@@ -1,31 +1,33 @@
 import React, { Component } from 'react';
 import Layout from '../Layout';
 import NavReports from '../NavReports';
+
 import ReactMarkdown from "react-markdown";
 
 class Reports extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             report: {
-                content: "hej",
-                title: ""
+                content: "Vänta ett ögonblick medans vi hämtar rapporten.",
+                title: "Laddar!"
             }
         };
     }
 
     componentDidMount() {
-        this.fetchData();
+        this.getReport(this.props.match.params.report);
     }
 
-    fetchData() {
-        fetch('/reports')
-            .then(res => res.json())
-            .then(report => this.setState({ report }));
+    componentWillReceiveProps(nextProps) {
+        this.getReport(nextProps.match.params.report);
     }
 
     getReport(report) {
-        fetch('/reports/' + report)
+        if (!report) {
+            report = "index";
+        }
+        fetch('/api/reports/' + report)
             .then(res => res.json())
             .then(report => this.setState({ report }));
     }

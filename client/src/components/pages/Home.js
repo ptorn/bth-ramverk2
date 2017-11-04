@@ -27,7 +27,7 @@ class Home extends Component {
                         Kaden och Noah som är 6 och 3 år gamla.
                         Dom är solstrålarna som förgyller livet.
                     </p>
-                    <img src="/images/me.jpg" className="img-responsive image-center"></img>
+                    <img src="/images/me.jpg" className="img-responsive image-center" alt="Me"></img>
                 </div>
             </Layout>
         );

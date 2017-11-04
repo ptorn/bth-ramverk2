@@ -12,11 +12,11 @@ This is my presentation for Framework2 (Ramverk2) at BTH.
 1. First clone the repo.
 `git clone https://github.com/ptorn/bth-ramverk2.git`
 
-2. After that install the dependencies for server and client.
+2. After that install the dependencies for server.
 `cd bth-ramverk2`
 `npm install` and `npm start`
 
 
 Thats it now you are all set.
 
-Enjoy!
+**Enjoy!**

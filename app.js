@@ -5,7 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
 var reports = require('./routes/reports');
 
 var app = express();
@@ -21,11 +20,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, "client/build")));
 
-app.use('/', index);
-app.use('/reports', reports);
+// Api routes
+app.use('/api/reports', reports);
+
+// Default root
+app.use('/', (req, res) => {
+    res.sendFile(path.join(__dirname + "/client/build/index.html"));
+});
+
+
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
     var err = new Error('Not Found');
 
     err.status = 404;
@@ -33,7 +39,7 @@ app.use(function(req, res, next) {
 });
 
 // error handler
-app.use(function(err, req, res) {
+app.use((err, req, res) => {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
