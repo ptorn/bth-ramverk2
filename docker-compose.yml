@@ -9,11 +9,10 @@ services:
       working_dir: /home/node/app
       environment:
         - NODE_ENV=production
-        - PORT=8000
       volumes:
         - ./:/home/node/app
       ports:
-        - "8000:8000"
+        - "8000:3000"
       command: "npm start"
 
     ramverk2_node9:
@@ -25,11 +24,10 @@ services:
       working_dir: /home/node/app
       environment:
         - NODE_ENV=production
-        - PORT=8009
       volumes:
         - ./:/home/node/app
       ports:
-        - "8009:8009"
+        - "8009:3000"
       command: "npm start"
 
     ramverk2_node8:
@@ -41,11 +39,10 @@ services:
       working_dir: /home/node/app
       environment:
         - NODE_ENV=production
-        - PORT=8008
       volumes:
         - ./:/home/node/app
       ports:
-        - "8008:8008"
+        - "8008:3000"
       command: "npm start"
 
     ramverk2_node6:
@@ -57,9 +54,8 @@ services:
       working_dir: /home/node/app
       environment:
         - NODE_ENV=production
-        - PORT=8006
       volumes:
         - ./:/home/node/app
       ports:
-        - "8006:8006"
+        - "8006:3000"
       command: "npm start"
