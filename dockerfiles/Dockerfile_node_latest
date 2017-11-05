@@ -3,6 +3,6 @@ WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
-RUN npm install-client && npm run client-build
+RUN npm run install-client && npm run build-client
 EXPOSE 8000
 CMD [ "npm", "start" ]
