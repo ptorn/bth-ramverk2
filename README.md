@@ -25,7 +25,7 @@ This is my presentation for Framework2 (Ramverk2) at BTH.
 
 If you have docker installed then you could also install and start the website like this.
 
-`docker run -p 3000:3000 peder/bth-ramverk2:latest`
+`docker run -d -p 3000:3000 peder/bth-ramverk2:latest`
 
 
 That's it now you are all set.
