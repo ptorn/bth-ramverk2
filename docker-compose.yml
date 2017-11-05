@@ -1,9 +1,10 @@
 version: "3"
 services:
-    ramverk2_node9:
-      build:
-        context: .
-        dockerfile: dockerfiles/Dockerfile_node9
+    ramverk2_latest:
+      image: peder/bth-ramverk2:latest
+    #   build:
+    #     context: .
+    #     dockerfile: dockerfiles/Dockerfile_node9
       user: "node"
       working_dir: /home/node/app
       environment:
@@ -14,10 +15,28 @@ services:
       ports:
         - "8009:8009"
       command: "npm start"
+
+    ramverk2_node9:
+      image: peder/bth-ramverk2:node9
+    #   build:
+    #     context: .
+    #     dockerfile: dockerfiles/Dockerfile_node9
+      user: "node"
+      working_dir: /home/node/app
+      environment:
+        - NODE_ENV=production
+        - PORT=8009
+      volumes:
+        - ./:/home/node/app
+      ports:
+        - "8009:8009"
+      command: "npm start"
+
     ramverk2_node8:
-      build:
-        context: .
-        dockerfile: dockerfiles/Dockerfile_node8
+      image: peder/bth-ramverk2:node8
+    #   build:
+    #     context: .
+    #     dockerfile: dockerfiles/Dockerfile_node8
       user: "node"
       working_dir: /home/node/app
       environment:
@@ -28,10 +47,12 @@ services:
       ports:
         - "8008:8008"
       command: "npm start"
+
     ramverk2_node6:
-      build:
-        context: .
-        dockerfile: dockerfiles/Dockerfile_node6
+      image: peder/bth-ramverk2:node6
+    #   build:
+    #     context: .
+    #     dockerfile: dockerfiles/Dockerfile_node6
       user: "node"
       working_dir: /home/node/app
       environment:
