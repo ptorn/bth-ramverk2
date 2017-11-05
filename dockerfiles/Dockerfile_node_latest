@@ -1,7 +1,8 @@
 FROM node:latest
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
-RUN npm install && npm run install-client && npm run client-build
+RUN npm install
 COPY . .
+RUN npm install-client && npm run client-build
 EXPOSE 8000
 CMD [ "npm", "start" ]
