@@ -9,11 +9,11 @@ services:
       working_dir: /home/node/app
       environment:
         - NODE_ENV=production
-        - PORT=8009
+        - PORT=8000
       volumes:
         - ./:/home/node/app
       ports:
-        - "8009:8009"
+        - "8000:8000"
       command: "npm start"
 
     ramverk2_node9:
