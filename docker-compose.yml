@@ -1,7 +1,7 @@
 version: "3"
 services:
     ramverk2_latest:
-      image: peder/bth-ramverk2:latest
+      image: ptorn/bth-ramverk2:latest
     #   build:
     #     context: .
     #     dockerfile: dockerfiles/Dockerfile_node9
@@ -16,7 +16,7 @@ services:
       command: "npm start"
 
     ramverk2_node9:
-      image: peder/bth-ramverk2:node9
+      image: ptorn/bth-ramverk2:node9
     #   build:
     #     context: .
     #     dockerfile: dockerfiles/Dockerfile_node9
@@ -31,7 +31,7 @@ services:
       command: "npm start"
 
     ramverk2_node8:
-      image: peder/bth-ramverk2:node8
+      image: ptorn/bth-ramverk2:node8
     #   build:
     #     context: .
     #     dockerfile: dockerfiles/Dockerfile_node8
@@ -46,7 +46,7 @@ services:
       command: "npm start"
 
     ramverk2_node6:
-      image: peder/bth-ramverk2:node6
+      image: ptorn/bth-ramverk2:node6
     #   build:
     #     context: .
     #     dockerfile: dockerfiles/Dockerfile_node6
