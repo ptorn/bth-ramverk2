@@ -13,7 +13,7 @@ services:
         - ./:/home/node/app
       ports:
         - "8000:3000"
-      command: "npm start"
+      command: "npm test && npm start"
 
     ramverk2_node9:
       image: ptorn/bth-ramverk2:node9
@@ -28,7 +28,7 @@ services:
         - ./:/home/node/app
       ports:
         - "8009:3000"
-      command: "npm start"
+      command: "npm test && npm start"
 
     ramverk2_node8:
       image: ptorn/bth-ramverk2:node8
@@ -43,7 +43,7 @@ services:
         - ./:/home/node/app
       ports:
         - "8008:3000"
-      command: "npm start"
+      command: "npm test && npm start"
 
     ramverk2_node6:
       image: ptorn/bth-ramverk2:node6
@@ -58,4 +58,4 @@ services:
         - ./:/home/node/app
       ports:
         - "8006:3000"
-      command: "npm start"
+      command: "npm test && npm start"

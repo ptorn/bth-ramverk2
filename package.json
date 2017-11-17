@@ -5,25 +5,32 @@
   "scripts": {
     "start": "node ./bin/www",
     "start-dev": "LOCAL_DEV_PORT=3001 nodemon ./bin/www",
-    "eslint": "eslint .; exit 0",
+    "eslint": "eslint --fix .; exit 0",
     "stylelint": "stylelint **/*.css; exit 0",
-    "test": "npm run eslint && npm run stylelint && cd client && npm run validate-less",
+    "test-client": "cd client && npm run test",
+    "posttest": "npm run eslint && npm run stylelint",
+    "test": "nyc --reporter=html --reporter=text mocha 'test/**/*.js'",
+    "validate": "npm run eslint && npm run stylelint && cd client && npm run validate-less",
     "install-client": "cd client && npm install",
-    "build-client": "cd client && npm run install-less && npm run build"
+    "build-client": "cd client && npm run install-less && npm run build",
+    "report-codecov": "nyc report --reporter=lcov > coverage.lcov && codecov"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
-    "jade": "~1.11.0",
     "morgan": "~1.9.0",
     "serve-favicon": "~2.4.5"
   },
   "devDependencies": {
+    "codecov": "^3.0.0",
     "eslint": "^4.10.0",
     "eslint-plugin-react": "^7.4.0",
+    "mocha": "^4.0.1",
     "nodemon": "^1.12.1",
-    "stylelint": "^8.2.0"
+    "nyc": "^11.3.0",
+    "stylelint": "^8.2.0",
+    "supertest": "^3.0.0"
   }
 }

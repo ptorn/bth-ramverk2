@@ -14,7 +14,7 @@ const About = () => {
                         GitHub
                     </a>
                 </p>
-                <p>Vill ni läsa mer om kursen så kan ni läsa på 
+                <p>Vill ni läsa mer om kursen så kan ni läsa på
                     <a href="https://dbwebb.se/kurser/ramverk2" title="Dbwebb Ramverk2">
                         kursens hemsida
                     </a>
