@@ -10,6 +10,7 @@
     "test-client": "cd client && npm run test",
     "posttest": "npm run eslint && npm run stylelint",
     "test": "nyc --reporter=html --reporter=text mocha 'test/**/*.js'",
+    "test-scrutinizer": "nyc --all --reporter=clover mocha test/**/*.js",
     "validate": "npm run eslint && npm run stylelint && cd client && npm run validate-less",
     "install-client": "cd client && npm install",
     "build-client": "cd client && npm run install-less && npm run build",
@@ -30,7 +31,6 @@
     "mocha": "^4.0.1",
     "nodemon": "^1.12.1",
     "nyc": "^11.3.0",
-    "stylelint": "^8.2.0",
-    "supertest": "^3.0.0"
+    "stylelint": "^8.2.0"
   }
 }
