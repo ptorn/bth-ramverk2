@@ -12,15 +12,7 @@ const reportController = {
                 content: data
             });
         });
-    },
-    getReports: (req, res) => {
-        fs.readFile("content/pages/report.md", "utf8", (err, data) => {
-            res.json({
-                title: "Redovisning",
-                content: data
-            });
-        });
-    },
+    }
 };
 
 module.exports = reportController;
