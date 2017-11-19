@@ -1,12 +1,12 @@
 @footerFontColor: #ffffff;
-@footerBgColor: #333333;
+@footerBgColor: #291819;
 @footerLinkColor: #ffffff;
 
 
 html,
 body {
+  background-color: #dad6cb;
   height: 100%;
-  // background-color: #CAC7C6;
 }
 
 /*
@@ -47,24 +47,26 @@ Position
 
 .navbar {
     // background-color: #303B4D;
-    background-image: linear-gradient(to bottom, #303b4d, #070f1a);
+    background-image: linear-gradient(to bottom, #dad6cb, #e0d0b6);
     border: 0px;
     border-radius: 0px;
-    box-shadow: 0px 0px 6px #333333;
+    box-shadow: 0px 0px 3px #999999;
     color: #e7e7e7;
+    height: 80px;
     margin-bottom: 0px;
 
     .navbar-brand {
-        color: #e7e7e7;
+        color: #291819;
         font-weight: bold;
+        padding: 30px 30px;
     }
 
     li a.nav-link {
-        color: #e7e7e7;
+        color: #291819;
     }
 
     li a.nav-link:hover {
-        color: #c3c3c3;
+        color: #c48e5d;
     }
 
     li a.active.nav-link {
@@ -73,31 +75,36 @@ Position
 
     .navbar-collapse {
         border-top: 0px;
+        padding: 15px;
     }
 
     ul.dropdown-menu li a.nav-link {
-        color: #555555;
+        color: #c48e5d;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar {
+        height: auto;
+
+        .navbar-brand {
+            padding: 15px 15px;
+        }
     }
 }
 
 .container-fluid {
-    margin-bottom: 150px;
+    margin-bottom: 165px;
     margin-left: 0px;
     margin-right: 0px;
-    min-height: calc(~'100vh - 200px');
+    margin-top: 15px;
+    min-height: calc(~'100vh - 260px');
     padding: 0px;
 }
 
-.question-post {
-    .awnsers {
-        margin-left: 40px;
-    }
-}
-
-.awnser-post {
-    .comments {
-        margin-left: 40px;
-    }
+.container {
+    background-color: #ffffff;
+    padding: 15px;
 }
 
 .footer {
