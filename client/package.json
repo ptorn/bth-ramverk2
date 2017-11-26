@@ -19,6 +19,7 @@
   },
   "proxy": "http://localhost:3001",
   "devDependencies": {
+    "eslint-plugin-react": "^7.5.1",
     "less": "^2.7.3",
     "less-plugin-clean-css": "^1.5.1",
     "lesshint": "^4.3.0"

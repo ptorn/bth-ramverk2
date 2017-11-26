@@ -4,7 +4,7 @@ import NavReports from '../NavReports';
 
 import ReactMarkdown from "react-markdown";
 
-class Reports extends Component {
+export default class Reports extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -45,4 +45,3 @@ class Reports extends Component {
         );
     }
 }
-export default Reports;

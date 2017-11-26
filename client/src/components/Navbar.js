@@ -45,7 +45,15 @@ const Navbar = () => {
                                         title="Chat"
                                         className="nav-link"
                                     >
-                                        <i className="fa fa-comments"></i> Chat
+                                        <i className="fa fa-comments"></i> Chatt
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link to="/gomoku"
+                                        title="Gomoku"
+                                        className="nav-link"
+                                    >
+                                        <i className="fa fa-comments"></i> Gomoku
                                     </Link>
                                 </li>
                                 <li className="nav-item">

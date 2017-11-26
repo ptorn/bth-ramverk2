@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Layout from '../Layout';
 
-class Home extends Component {
+export default class Home extends Component {
     render() {
         return (
             <Layout>
@@ -34,5 +34,3 @@ class Home extends Component {
         );
     }
 }
-
-export default Home;
