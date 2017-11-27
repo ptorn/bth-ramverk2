@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ChatInput from "./ChatInput";
 import Chat from "./Chat";
+import Config from "../../config";
 
 const ConnectForm = (props) => {
     return (
@@ -36,9 +37,9 @@ export default class Connect extends Component {
         this.url = "ws://dbwebb.se:1337/echo";
         this.connect = this.connect.bind(this);
         this.sendMessage = this.sendMessage.bind(this);
-
+        console.log(Config.wsServer);
         this.state = {
-            ws: new WebSocket("ws://localhost:3001", "json"),
+            ws: new WebSocket("ws://" + Config.wsServer, "json"),
             nick: "",
             connected: false,
             users: [],
