@@ -87,7 +87,7 @@ function handleClose(wss, ws) {
     broadcastExceptJSON({
         type: "message",
         message: {
-            message: ws.nick + " har loggat ut.",
+            message: ws.nick + " has logged out.",
             nick: "",
             time: Date.now()
         }

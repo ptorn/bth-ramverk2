@@ -36,10 +36,7 @@ const ChatWindow = (props) => {
 
 
 const UserName = (props) => {
-    // if (props.number === 0) {
-    return <li>{props.item}</li>;
-    // }
-    // return <li>, {props.item} </li>;
+    return <li><b>{props.item}</b></li>;
 };
 
 
@@ -64,8 +61,8 @@ export default class Chat extends Component {
 
         return (
             <div>
-                <div className="chat-window col-md-8 rounded" style={{'backgroundColor': '#ccc', padding: '30px'}}>
-                    <div style={{height: "400px", overflowY: "scroll"}}>
+                <div className="chat-window col-md-8 rounded">
+                    <div className="message-window rounded">
                         <ul key="userList">
                             <ChatWindow
                                 messages = {this.props.messages}
@@ -88,7 +85,6 @@ export default class Chat extends Component {
                         {usersList}
                     </ul>
                 </div>
-
             </div>
         );
     }
