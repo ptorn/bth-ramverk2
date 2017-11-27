@@ -41,9 +41,9 @@ export default class Connect extends Component {
             ws: new WebSocket("ws://localhost:3001", "json"),
             nick: "",
             connected: false,
-            users: ["peder"],
+            users: [],
             messages: [],
-            loginStatus: ""
+            loginStatus: "",
         };
     }
 
@@ -59,7 +59,7 @@ export default class Connect extends Component {
                 }
                 if (data.type === "userList") {
                     this.setState((previousState) => {
-                        return previousState.users = data.users.users;
+                        return previousState.users = data.users;
                     });
                 }
             };
@@ -84,7 +84,6 @@ export default class Connect extends Component {
                 nick: content
             }
         }));
-        console.log(this.state.users);
     }
 
     sendMessage(content) {
@@ -93,7 +92,6 @@ export default class Connect extends Component {
             nick: this.state.nick,
             message: content
         }));
-        this.setState({});
     }
 
     render() {

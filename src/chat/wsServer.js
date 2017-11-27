@@ -45,16 +45,23 @@ const wsServer = (config) => {
         config.handleMessage(message, wss, ws);
     };
 
-
+    const closeHandler = (wss, ws) => {
+        config.handleClose(wss, ws);
+    };
 
     wss.on("connection", (ws /*, req*/) => {
+        const heartbeat = () => {
+            ws.isAlive = true;
+        };
+
         console.log("Connection received. Adding client.");
         // wss.broadcastExcept(ws, `New client connected (${wss.clients.size}).`);
         ws.isAlive = true;
-        ws.on("pong", heartbeat);
         ws.on("message", (message) => {
             messageHandler(message, wss, ws);
         });
+        ws.on("pong", heartbeat);
+        ws.on("close", () => (closeHandler(wss, ws)));
     });
 
 
@@ -89,21 +96,17 @@ const wsServer = (config) => {
 
 
 
-    const heartbeat = () => {
-        this.isAlive = true;
-    };
-
-
-
     setInterval(function ping() {
         wss.clients.forEach(function each(ws) {
             if (ws.isAlive === false) {
+                console.log("die");
+                console.log(ws.nick);
                 return ws.terminate();
             }
             ws.isAlive = false;
             ws.ping('', false, true);
         });
-    }, 30000);
+    }, 10000);
 };
 
 module.exports = wsServer;

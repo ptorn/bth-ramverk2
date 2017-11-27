@@ -4,7 +4,7 @@ export default class ChatInput extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            content: this.props.content,
+            content: "",
         };
     }
     onInputChange(event) {

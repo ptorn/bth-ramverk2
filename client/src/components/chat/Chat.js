@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from 'react-dom';
 import ChatInput from "./ChatInput";
 
 const ChatLine = (props) => {
@@ -11,17 +12,17 @@ const ChatLine = (props) => {
     );
 };
 
+
+
 const ChatWindow = (props) => {
-    let messagesHtml = props.messages.map((message, id) => {
+    let messagesHtml =  props.messages.map((message, id) => {
         return (
-            <ul>
-                <ChatLine
-                    key={id}
-                    nick = {message.nick}
-                    message = {message.message}
-                    time = {message.time}
-                />
-            </ul>
+            <ChatLine
+                key={id}
+                nick = {message.nick}
+                message = {message.message}
+                time = {message.time}
+            />
         );
     });
 
@@ -32,32 +33,62 @@ const ChatWindow = (props) => {
     );
 };
 
+
+
+const UserName = (props) => {
+    // if (props.number === 0) {
+    return <li>{props.item}</li>;
+    // }
+    // return <li>, {props.item} </li>;
+};
+
+
+
 export default class Chat extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            content: this.props.content,
-        };
+    scrollToBottom() {
+        const node = ReactDOM.findDOMNode(this.messagesEnd);
+
+        node.scrollIntoView({ behavior: "smooth" });
+    }
+    componentDidMount() {
+        this.scrollToBottom();
+    }
+
+    componentDidUpdate() {
+        this.scrollToBottom();
     }
     render() {
-        let users = this.props.users.map((item) => {
-            return <b>{item} </b>;
+        let usersList = this.props.users.map((item, id) => {
+            return <UserName key={id} item={item} number={id} />;
         });
 
         return (
             <div>
-                <div className="chat-window">
-                    <ChatWindow
-                        messages = {this.props.messages}
+                <div className="chat-window col-md-8 rounded" style={{'backgroundColor': '#ccc', padding: '30px'}}>
+                    <div style={{height: "400px", overflowY: "scroll"}}>
+                        <ul key="userList">
+                            <ChatWindow
+                                messages = {this.props.messages}
+                            />
+                        </ul>
+                        <div style={{ float: "left", clear: "both" }}
+                            ref={(el) => { this.messagesEnd = el; }}>
+                        </div>
+                    </div>
+                    <hr />
+                    <ChatInput
+                        content = {this.props.content}
+                        buttonValue = {this.props.buttonValue}
+                        callback = {this.props.callback}
                     />
                 </div>
-                <ChatInput
-                    content = {this.state.content}
-                    buttonValue = {this.props.buttonValue}
-                    callback = {this.props.callback}
-                />
-            <p>Inloggade:</p>
-                {users}
+                <div className="user-window col-md-4">
+                    <h4>Inloggade</h4>
+                    <ul>
+                        {usersList}
+                    </ul>
+                </div>
+
             </div>
         );
     }

@@ -23,9 +23,10 @@ function handleMessage(message, wss, ws) {
     switch (data.type) {
         case "createUser":
             createUser(data.user.nick);
+            ws.nick = data.user.nick;
             broadcastAllJSON({
                 type: "userList",
-                users: users
+                users: users.users
             }, wss);
             // broadcastExceptJSON(users, wss, ws);
             broadcastClientJSON({
@@ -78,8 +79,24 @@ function handleError(error) {
  * @param  {string} reason Error reason
  * @return {void}
  */
-function handleClose(code, reason) {
-    console.log(`Closing connection: ${code} ${reason}`);
+function handleClose(wss, ws) {
+    users.users = users.users.filter((nick) => {
+        return nick !== ws.nick;
+    });
+
+    broadcastExceptJSON({
+        type: "message",
+        message: {
+            message: ws.nick + " har loggat ut.",
+            nick: "",
+            time: Date.now()
+        }
+    }, wss, ws);
+    broadcastAllJSON({
+        type: "userList",
+        users: users.users
+    }, wss);
+    console.log("User %s has left the chat.", ws.nick);
 }
 
 
@@ -141,7 +158,7 @@ function broadcastExceptJSON(data, wss, ws) {
  */
 const chatServer = (httpServer) => {
     return {
-        users: users,
+        // users: users,
         server: wsServer({
             server: httpServer,
             handleMessage: handleMessage,
