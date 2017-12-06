@@ -49,6 +49,14 @@ const Navbar = () => {
                                     </Link>
                                 </li>
                                 <li className="nav-item">
+                                    <Link to="/crud"
+                                        title="CRUD"
+                                        className="nav-link"
+                                    >
+                                        <i className="fa fa-comments"></i> CRUD
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
                                     <Link to="/gomoku"
                                         title="Gomoku"
                                         className="nav-link"

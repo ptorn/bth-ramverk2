@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var reports = require('./routes/reports');
+var albums = require('./routes/albums');
 
 var app = express();
 
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, "client/build")));
 
 // Api routes
 app.use('/api/reports', reports);
+app.use('/api/albums', albums);
 
 // Default root
 app.use('/', (req, res) => {
