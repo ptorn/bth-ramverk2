@@ -4,20 +4,13 @@ export default class AddAlbum extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            content: {
-                artist: "",
-                album: "",
-                year: ""
-            },
+            artist: "",
+            album: "",
+            year: ""
         };
     }
     onInputChange(event) {
-        let state = this.state;
-        let type = event.target.id;
-        let value = event.target.value;
-
-        state.content[type] = value;
-        this.setState(state => state);
+        this.setState({[event.target.id]: event.target.value});
     }
     render() {
         return (
@@ -28,7 +21,7 @@ export default class AddAlbum extends Component {
                         className="form-control"
                         type="text"
                         id="artist"
-                        value={this.state.content.artist}
+                        value={this.state.artist}
                         onChange={this.onInputChange.bind(this)}
                     />
                 </div>
@@ -38,7 +31,7 @@ export default class AddAlbum extends Component {
                         className="form-control"
                         type="text"
                         id="album"
-                        value={this.state.content.album}
+                        value={this.state.album}
                         onChange={this.onInputChange.bind(this)}
                     />
                 </div>
@@ -48,13 +41,13 @@ export default class AddAlbum extends Component {
                         className="form-control"
                         type="number"
                         id="year"
-                        value={this.state.content.year}
+                        value={this.state.year}
                         onChange={this.onInputChange.bind(this)}
                     />
                 </div>
                 <button
                     className="btn btn-primary"
-                    onClick={() => this.props.callback(this.state.content)}
+                    onClick={() => this.props.callback(this.state)}
                 >
                     Lägg till album
                 </button>

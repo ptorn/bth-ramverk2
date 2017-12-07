@@ -1,15 +1,6 @@
 import React, { Component } from "react";
 import AddAlbum from "./AddAlbum";
-
-const Album = (props) => {
-    return (
-        <div className="album-item">
-            <div className="artist">{props.data.artist}</div>
-            <div className="album">{props.data.album}</div>
-            <div className="year">{props.data.year}</div>
-        </div>
-    );
-};
+import Album from "./Album";
 
 export default class Albums extends Component {
     constructor(props) {
@@ -27,6 +18,22 @@ export default class Albums extends Component {
         try {
             console.log(album);
             fetch('/api/albums/add', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(album)
+            });
+        } catch (e) {
+            console.log(e);
+        }
+        await this.getAllAlbums();
+    }
+    async updateAlbum(album) {
+        try {
+            console.log(album);
+            fetch('/api/albums/update', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -58,7 +65,10 @@ export default class Albums extends Component {
     }
     render() {
         let albums = this.state.albums.map((album, i) => {
-            return <Album key={i} data={album} />;
+            return (
+                <div className="item">
+                    <Album key={i} data={album} />
+                </div>);
         });
 
         return (
