@@ -4,28 +4,43 @@ export default class Album extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: this.props.data._id,
+            _id: this.props.data._id,
             artist: this.props.data.artist,
             album: this.props.data.album,
             year: this.props.data.year,
-            editAlbum: this.props.editAlbum,
             edit: false
         };
+    }
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            artist: nextProps.data.artist,
+            album: nextProps.data.album,
+            year: nextProps.data.year,
+        });
     }
     toggleEdit() {
         let editValue = this.state.edit ? false : true;
 
         this.setState({edit: editValue});
     }
+    updateAlbum(album) {
+        this.props.updateAlbum(album);
+        this.toggleEdit();
+    }
+    deleteAlbum() {
+        this.props.deleteAlbum({
+            _id: this.props.data._id,
+        });
+    }
     onInputChange(event) {
         this.setState({[event.target.id]: event.target.value});
     }
     render() {
         let album = {
-            id: this.props.data._id,
-            artist: this.props.data.artist,
-            album: this.props.data.album,
-            year: this.props.data.year,
+            _id: this.state._id,
+            artist: this.state.artist,
+            album: this.state.album,
+            year: this.state.year,
         };
 
         return (
@@ -43,7 +58,7 @@ export default class Album extends Component {
                         </button>
                         <button
                             className="btn btn-primary"
-                            onClick={() => this.toggleEdit()}
+                            onClick={() => this.deleteAlbum()}
                         >
                             Radera album
                         </button>
@@ -53,7 +68,7 @@ export default class Album extends Component {
                     <div className="album-edit">
                         <div className="album-input-field">
                             <div className="form-group">
-                                <label for="artist">Artist</label>
+                                <label htmlFor="artist">Artist</label>
                                 <input
                                     className="form-control"
                                     type="text"
@@ -63,7 +78,7 @@ export default class Album extends Component {
                                 />
                             </div>
                             <div className="form-group">
-                                <label for="album">Album</label>
+                                <label htmlFor="album">Album</label>
                                 <input
                                     className="form-control"
                                     type="text"
@@ -73,7 +88,7 @@ export default class Album extends Component {
                                 />
                             </div>
                             <div className="form-group">
-                                <label for="year">År</label>
+                                <label htmlFor="year">År</label>
                                 <input
                                     className="form-control"
                                     type="number"
@@ -84,7 +99,7 @@ export default class Album extends Component {
                             </div>
                             <button
                                 className="btn btn-primary"
-                                onClick={() => this.props.callback(album)}
+                                onClick={() => this.updateAlbum(album)}
                             >
                                 Uppdatera album
                             </button>

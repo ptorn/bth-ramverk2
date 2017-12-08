@@ -16,7 +16,7 @@ export default class AddAlbum extends Component {
         return (
             <div className="album-input-field">
                 <div className="form-group">
-                    <label for="artist">Artist</label>
+                    <label htmlFor="artist">Artist</label>
                     <input
                         className="form-control"
                         type="text"
@@ -26,7 +26,7 @@ export default class AddAlbum extends Component {
                     />
                 </div>
                 <div className="form-group">
-                    <label for="album">Album</label>
+                    <label htmlFor="album">Album</label>
                     <input
                         className="form-control"
                         type="text"
@@ -36,7 +36,7 @@ export default class AddAlbum extends Component {
                     />
                 </div>
                 <div className="form-group">
-                    <label for="year">År</label>
+                    <label htmlFor="year">År</label>
                     <input
                         className="form-control"
                         type="number"

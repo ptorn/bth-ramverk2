@@ -10,7 +10,15 @@ router.get('/listall', (req, res) => {
 });
 
 router.post('/add', (req, res) => {
-    albumController.postAddAlbum(req, res);
+    albumController.postAddOneAlbum(req, res);
+});
+
+router.post('/update', (req, res) => {
+    albumController.postUpdateOneAlbum(req, res);
+});
+
+router.delete('/delete', (req, res) => {
+    albumController.deleteOneAlbum(req, res);
 });
 
 router.get('/reset', (req, res) => {

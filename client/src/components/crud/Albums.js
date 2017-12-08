@@ -10,6 +10,8 @@ export default class Albums extends Component {
         };
         this.addAlbum = this.addAlbum.bind(this);
         this.getReset = this.getReset.bind(this);
+        this.updateAlbum = this.updateAlbum.bind(this);
+        this.deleteAlbum = this.deleteAlbum.bind(this);
     }
     componentDidMount() {
         this.getAllAlbums();
@@ -30,9 +32,24 @@ export default class Albums extends Component {
         }
         await this.getAllAlbums();
     }
-    async updateAlbum(album) {
+    async deleteAlbum(album) {
         try {
             console.log(album);
+            fetch('/api/albums/delete', {
+                method: 'DELETE',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(album)
+            });
+        } catch (e) {
+            console.log(e);
+        }
+        await this.getAllAlbums();
+    }
+    async updateAlbum(album) {
+        try {
             fetch('/api/albums/update', {
                 method: 'POST',
                 headers: {
@@ -58,7 +75,7 @@ export default class Albums extends Component {
     async getReset() {
         try {
             await fetch('/api/albums/reset');
-            this.getAllAlbums();
+            await this.getAllAlbums();
         } catch (e) {
             console.log(e);
         }
@@ -66,8 +83,13 @@ export default class Albums extends Component {
     render() {
         let albums = this.state.albums.map((album, i) => {
             return (
-                <div className="item">
-                    <Album key={i} data={album} />
+                <div className="item" key={i}>
+                    <Album
+                        key={i}
+                        data={album}
+                        updateAlbum={this.updateAlbum}
+                        deleteAlbum={this.deleteAlbum}
+                    />
                 </div>);
         });
 
