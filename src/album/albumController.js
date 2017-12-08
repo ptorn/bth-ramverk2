@@ -1,4 +1,5 @@
 "use strict";
+
 const db = require("../database/database.js");
 const reset = require("./setup.js");
 const albumController = {
@@ -28,7 +29,5 @@ const albumController = {
     }
 
 };
-
-
 
 module.exports = albumController;
