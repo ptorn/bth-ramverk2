@@ -11,6 +11,9 @@ This is my presentation for Framework2 (Ramverk2) at BTH.
 
 ## Installation
 
+The port for the server to listen to is determined in this order with following environment variables. If no variable is set it will default to port 3000.
+process.env.DBWEBB_PORT, process.env.PORT, process.env.LOCAL_DEV_PORT, 3000
+
 1. First clone the repo.
 `git clone https://github.com/ptorn/bth-ramverk2.git`
 
@@ -18,14 +21,34 @@ This is my presentation for Framework2 (Ramverk2) at BTH.
 `cd bth-ramverk2`
 `npm install`
 
-3. Now its time to start it.
+## Test
+
+Run tests with mocha, eslint and stylelint.
+`npm run test`
+
+## Start
+
+Now it's time to start the server.
 `npm start`
 
-## Alternative installation using Docker
+This starts only the server and NOT the MongoDB server.
 
-If you have docker installed then you could also install and start the website like this.
+## MongoDB
 
-`docker run -d -p 3000:3000 ptorn/bth-ramverk2:latest npm start`
+Start the MongoDB using docker-compose.
+`docker-compose up mongodb -d`
+
+
+## Alternative installation method with starting of the node server  and MongoDB server using docker-compose.
+
+If you have docker installed with docker-compose then you could install and start the server and the MongoDB container.
+
+1. First clone the repo.
+`git clone https://github.com/ptorn/bth-ramverk2.git`
+
+2. `cd bth-ramverk2`
+
+3. `docker-compose up -d`
 
 
 That's it now you are all set.
