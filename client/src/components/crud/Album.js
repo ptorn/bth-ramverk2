@@ -51,7 +51,7 @@ export default class Album extends Component {
                         <div className="album">{this.state.album}</div>
                         <div className="year">{this.state.year}</div>
                         <button
-                            className="btn btn-primary"
+                            className="btn btn-primary btn-edit"
                             onClick={() => this.toggleEdit()}
                         >
                             Redigera album

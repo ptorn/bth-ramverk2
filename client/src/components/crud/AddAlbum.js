@@ -14,7 +14,7 @@ export default class AddAlbum extends Component {
     }
     render() {
         return (
-            <div className="album-input-field">
+            <div>
                 <div className="form-group">
                     <label htmlFor="artist">Artist</label>
                     <input

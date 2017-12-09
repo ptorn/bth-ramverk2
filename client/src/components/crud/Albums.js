@@ -83,7 +83,7 @@ export default class Albums extends Component {
     render() {
         let albums = this.state.albums.map((album, i) => {
             return (
-                <div className="item" key={i}>
+                <div className="item col-md-3 mb-20" key={i}>
                     <Album
                         key={i}
                         data={album}
@@ -95,14 +95,16 @@ export default class Albums extends Component {
 
         return (
             <div>
-                <div className="albums">
+                <div className="albums col-md-12">
                     {albums}
                 </div>
-                <AddAlbum callback={this.addAlbum}/>
-                <button
-                    className="btn btn-primary"
-                    onClick={this.getReset}>Reset</button
-                >
+                <div className="album-input-field col-md-6 col-md-offset-3 mt-20">
+                    <AddAlbum callback={this.addAlbum}/>
+                    <button
+                        className="btn btn-primary mt-20"
+                        onClick={this.getReset}>Reset</button
+                    >
+                </div>
             </div>
         );
     }

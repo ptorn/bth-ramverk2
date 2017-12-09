@@ -5,7 +5,7 @@ services:
             context: .
             dockerfile: dockerfiles/Dockerfile_node_latest
         environment:
-            - DBWEBB_DSN=mongodb://mongodb:27017/mumin
+            - DBWEBB_DSN=mongodb://mongodb:27017/ramverk2
         user: "node"
         working_dir: /home/node/app
         volumes:

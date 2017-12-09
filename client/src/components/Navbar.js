@@ -53,7 +53,7 @@ const Navbar = () => {
                                         title="CRUD"
                                         className="nav-link"
                                     >
-                                        <i className="fa fa-comments"></i> CRUD
+                                        <i className="fa fa-database"></i> CRUD
                                     </Link>
                                 </li>
                                 <li className="nav-item">
