@@ -57,7 +57,7 @@ export default class Album extends Component {
                             Redigera album
                         </button>
                         <button
-                            className="btn btn-primary"
+                            className="btn btn-primary btn-delete"
                             onClick={() => this.deleteAlbum()}
                         >
                             Radera album
@@ -98,7 +98,7 @@ export default class Album extends Component {
                                 />
                             </div>
                             <button
-                                className="btn btn-primary"
+                                className="btn btn-primary width-50"
                                 onClick={() => this.updateAlbum(album)}
                             >
                                 Uppdatera album
