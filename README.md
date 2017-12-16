@@ -86,7 +86,9 @@ If you have docker installed with docker-compose then you could install and star
 
 2. `cd bth-ramverk2`
 
-3. `docker-compose up -d`
+3. `npm install`
+
+4. `docker-compose up -d`
 
 That's it now you are all set.
 
