@@ -1,6 +1,8 @@
 "use strict";
 
-const db = require("../database/database.js");
+// const db = require("../database/database.js");
+const db = require('bth-mongodb-crud')('ramverk2');
+
 const reset = require("./setup.js");
 const albumController = {
     getAllAlbums: async (req, res) => {
@@ -16,7 +18,7 @@ const albumController = {
     },
     postAddOneAlbum: async (req, res) => {
         try {
-            await db.insertOne("albums", req.body);
+            await db.insert("albums", req.body);
             await res.end();
         } catch (e) {
             console.log(e);
@@ -28,7 +30,7 @@ const albumController = {
     },
     postUpdateOneAlbum: async (req, res) => {
         try {
-            await db.updateOne("albums", "_id", req.body._id, req.body);
+            await db.update("albums", "_id", req.body._id, req.body);
             await res.end();
         } catch (e) {
             console.log(e);
@@ -36,7 +38,7 @@ const albumController = {
     },
     deleteOneAlbum: async (req, res) => {
         try {
-            await db.deleteOne("albums", "_id", req.body._id);
+            await db.delete("albums", "_id", req.body._id);
             await res.end();
         } catch (e) {
             console.log(e);

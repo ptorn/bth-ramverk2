@@ -29,8 +29,8 @@ const reset = {
         try {
             const db  = dbObject;
 
-            await db.deleteMany(colName);
-            await db.insertMany(colName, docs);
+            await db.delete(colName);
+            await db.insert(colName, docs);
         } catch (e) {
             console.log(e);
         }
