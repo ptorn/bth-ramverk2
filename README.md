@@ -20,14 +20,15 @@ This is my presentation for Framework2 (Ramverk2) at BTH. The application is bui
 
 ## Installation
 
-The port for the server to listen to is determined in this order with following environment variables. If no variable is set it will default to port 3000.
-**process.env.DBWEBB_PORT**, **process.env.PORT**, **process.env.LOCAL_DEV_PORT**, **3000**
+The port for the server to listen to is determined in this order with following environment variables. **process.env.DBWEBB_PORT**, **process.env.PORT**, **process.env.LOCAL_DEV_PORT**, **3000**
 
-1. First clone the repo.
+If no variable is set it will default to port **3000**.
+
+#### 1. First clone the repo.
 
 `git clone https://github.com/ptorn/bth-ramverk2.git`
 
-2. After that install the dependencies for server and client. And it will also build the client.
+#### 2. After that install the dependencies for server and client. And it will also build the client.
 
 ```
 // Enter the path of the application
@@ -43,7 +44,7 @@ npm install
 Run tests with mocha, eslint and stylelint.
 
 ```
-// To test the local installed files.
+// To test the locally.
 npm run test
 ```
 
@@ -71,7 +72,7 @@ This starts only the server and NOT the MongoDB server.
 
 ## MongoDB
 
-MongoDB uses **process.env.DBWEBB_DSN** but will default with **mongodb://mongodb:27017**
+MongoDB uses **process.env.DBWEBB_DSN** but will default to **mongodb://mongodb:27017**
 
 Start the MongoDB using docker-compose.
 `docker-compose up mongodb -d`
@@ -81,8 +82,7 @@ Start the MongoDB using docker-compose.
 
 If you have docker installed with docker-compose then you could install and start the server and the MongoDB container.
 
-1. First clone the repo.
-`git clone https://github.com/ptorn/bth-ramverk2.git`
+1. `git clone https://github.com/ptorn/bth-ramverk2.git` - Clone the repo from github.
 
 2. `cd bth-ramverk2`
 
